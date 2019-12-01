@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-lg-offset-3">
+      <br />
+
+      <input type="text" [(ngModel)]="Keyword" name="searchword" class="form-control form-group-lg" />
+      <input type="button" (click)="Search()" value="{{'searchBtn'|translate}}" class="form-control" />
+
+    </div>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row">
+
+    <h2 *ngIf="!Members" class="text-center">{{'searchTypeName'|translate}}</h2>
+    <h2 *ngIf="Members && Members.length == 0"  class="text-center">{{'searchNoResult'|translate}}</h2>
+
+
+    <div *ngFor="let member of Members" class="col-md-6" style="padding-bottom:10px;">
+      <div class="row">
+        <div class="col-sm-4 col-md-4">
+          <img src="{{member.Image|attachHostName}}" alt="" class="img-rounded img-responsive" />
+        </div>
+        <div class="col-sm-8 col-md-8">
+          <blockquote>
+            <p>{{member.FullName}}</p> <small><cite title="Source Title">{{member.Status}}</cite></small>
+          </blockquote>
+          <p>
+            <a class="btn btn-lg  btn-primary" target="_blank" href="http://@Request.Url.Authority/Member/@item.UserName">Contact User</a>
+    
+          </p>
+        </div>
+      </div>
+    </div>    
+
+
+
+
+
+  </div>
+
+</div>

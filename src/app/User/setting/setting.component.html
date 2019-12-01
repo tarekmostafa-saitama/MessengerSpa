@@ -1,0 +1,33 @@
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            
+            <img src="{{ProDetails.Image|attachHostName}}" id="pp" class="img-circle" alt="Cinque Terre">
+            <br>
+            <label class="btn btn-primary" for="my-file-selector">
+                <input id="my-file-selector" (change)="UploadProfilePicture($event)" multiple="false" accept="image/*" type="file" style="display:none;">
+                {{'settingChangePP'|translate}}
+            </label>
+        </div>
+        <div class="col-md-8">
+            <form [formGroup]='settingForm' (ngSubmit)='UpdateSetting()'>
+                <div class="form-group">
+                    <label for="appearinresult" class="text-uppercase">{{'settingAppearInSearch'|translate}} </label>
+                    <input type="checkbox"  name="appearinresult"
+                     id="appearinsearch" class="form-control" formControlName = 'AppearInSearch'>
+
+                </div>
+                <div class="form-group">
+                    <label for="status" class="text-uppercase">{{'settingStatus'|translate}}</label>
+                    <textarea class="form-control" name="status" 
+                    formControlName = 'Status'></textarea>
+                </div>
+                <div class="form-group">
+                        <button type="submit" class="btn btn-primary">{{'settingUpdateBtn'|translate}}</button>
+                    </div>
+
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+<section class="login-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 login-sec">
+          <h2 class="text-center">{{ 'loginNow' | translate }}</h2>
+          <form class="login-form" [formGroup]='signinform' (ngSubmit)='Login()'>
+            <div class="form-group">
+              <label for="exampleInputEmail1" class="text-uppercase">{{ 'loginUserName' | translate }}</label>
+              <input type="text" class="form-control" placeholder="" formControlName = 'UserName'>
+              <span class="help-block validation-alert"
+               *ngIf="!signinform.get('UserName').valid && signinform.get('UserName').touched">{{ 'loginValidateRequiredUserName' | translate }}</span>
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="text-uppercase">{{ 'loginPassword' | translate }}</label>
+              <input type="password" class="form-control" placeholder="" formControlName = 'Password'>
+              <span class="help-block validation-alert"
+               *ngIf="!signinform.get('Password').valid && signinform.get('Password').touched">{{ 'loginValidateRequiredPassword' | translate }}</span>
+            </div>
+  
+  
+            <div class="form-check">
+            <!--   <label class="form-check-label float-left">
+                <input type="checkbox" class="form-check-input">
+                <small>Remember Me</small>
+              </label> -->
+              <button [disabled] = "!signinform.valid"
+              type="submit" class="btn btn-login float-right">{{ 'loginBtn' | translate }}</button>
+            </div>
+  
+          </form>
+  
+        </div>
+        <div class="col-md-8 banner-sec">
+         
+        </div>
+      </div>
+    </div>
+  </section>

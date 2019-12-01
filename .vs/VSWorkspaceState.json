@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\app",
+    "\\src\\app\\Auth",
+    "\\src\\app\\Auth\\register",
+    "\\src\\app\\Shared",
+    "\\src\\app\\Shared\\Interceptors",
+    "\\src\\app\\Shared\\Services"
+  ],
+  "PreviewInSolutionExplorer": false
+}

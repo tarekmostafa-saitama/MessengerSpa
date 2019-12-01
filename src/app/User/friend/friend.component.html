@@ -1,0 +1,149 @@
+<div class="container-fluid app">
+    <div class="row app-one">
+  
+  
+      <div class="col-md-3">
+  
+      </div>
+      <div class="col-md-6 current-chat conversation">
+  
+  
+  
+        <!-- Heading -->
+        <div class="row heading">
+  
+          <div class="col-sm-12">
+  
+            <div class="btn-group chat-toolbar" role="group" aria-label="...">
+              <div *ngIf="!Connected" class="row userconnect">
+                <div class="col-sm-10">
+                  <input type="hidden" id="RelationId" />
+                  <input [(ngModel)]="SecretKey" type="password" id="SecretKey" placeholder="{{'friendEnterKey'|translate}}" class="form-control"/>
+                </div>
+  
+                <div class="col-sm-2">
+                  <button (click)="SetupFriendEnvironment()" [disabled]="!SecretKey || SecretKey.length < 8" id="connect" class="btn btn-default ticket-option"
+                    type="button">
+                    <i class="glyphicon glyphicon-log-in"></i>
+                    {{'friendConnect'|translate}}
+                  </button>
+                </div>
+              </div>
+  
+  
+              <div *ngIf="Connected" class="row sideBar-body">
+                <div class="col-sm-2 sideBar-avatar">
+                  <div class="avatar-icon">
+                    <img id="profilepic" src="{{UserDetails.Image}}">
+                  </div>
+                </div>
+  
+                <div class="col-sm-8 sideBar-main">
+                  <div class="row">
+                    <div class="col-sm-12 sideBar-name">
+                      <span class="name-meta">
+                        <span>{{UserDetails.Name}}</span>
+                        <span>
+  
+                          <sub *ngIf="!UserDetails.State">{{'offline'|translate}}</sub>
+                          <sub *ngIf="UserDetails.State">{{'online'|translate}}</sub>
+                        </span>
+                      </span>
+                    </div>
+  
+                  </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+        <!-- Heading End -->
+        <!-- Message Box -->
+        <div class="row message chat_area" #divToScroll>
+          <h2 class="text-center" *ngIf="Messages && Messages.length == 0">{{'friendNoMessages'|translate}}</h2>
+          <div *ngIf="Messages && Messages.length != 0">
+              <div *ngFor="let msg of Messages">
+  
+                  <div class="row message-body" *ngIf="msg.Sender == SenderType.Me">
+                      <div class="col-sm-12 message-main-receiver">
+                        <div class="receiver">
+                          <div class="message-text">
+                            <div *ngIf="msg.Type == MessageType.TextMessage">
+                              {{msg.MessageData}}
+                            </div>
+                            <div *ngIf="msg.Type == MessageType.ImageMessage">
+                              <img class="chatimg" src="{{msg.MessageData|attachHostName}}"/>
+                            </div>
+                          </div>
+                          <span class="message-time pull-right">
+                              {{msg.Date |amFromUtc |amLocal |amDateFormat: 'YYYY-MM-DD HH:mm'}}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+  
+                    <div class="row message-body" *ngIf="msg.Sender == SenderType.Friend">
+                        <div class="col-sm-12 message-main-sender">
+                          <div class="sender">
+                            <div class="message-text">
+                              <div *ngIf="msg.Type == MessageType.TextMessage">
+                                {{msg.MessageData}}
+                              </div>
+                              <div *ngIf="msg.Type == MessageType.ImageMessage">
+                                <img class="chatimg" src="{{msg.MessageData | attachHostName}}"/>
+                              </div>
+                            </div>
+                            <span class="message-time pull-right">
+                              {{msg.Date | amFromUtc  |amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+  
+  
+              </div>
+            </div>
+            <div class="row message-body" *ngIf="TypingIndicator">
+                <div class="col-sm-12 message-main-receiver">
+                  <div class="receiver">
+                    <div class="message-text">
+                        <img src="../../../../assets/imgs/typing.gif" width="100%" height="30">
+                    </div>
+                   <!--  <span class="message-time pull-right">
+                        {{msg.Date |amFromUtc |amLocal |amDateFormat: 'mm:ss'}}
+                    </span> -->
+                  </div>
+                </div>
+              </div>
+  
+        </div>
+        <!-- Message Box End -->
+        <!-- Reply Box -->
+        <div class="row reply">
+  
+          <div class="col-sm-10 col-xs-10 reply-main">
+            <input [(ngModel)]="NewMessage" (keyup.enter)="SendMessage()" (blur)="Typing(false)" (focus)="Typing(true)"  type="text" class="form-control">
+          </div>
+          
+          <div class="col-sm-1 col-xs-1 reply-recording">
+            <div class="upload-btn-wrapper text-center">
+              <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+              <input type="file" (change)="SendImageMessage($event)" multiple="false" accept="image/*" id="myfile" name="myfile" />
+            </div>
+          </div>
+
+          <div (click)="SendMessage()" class="col-sm-1 col-xs-1  reply-send" id="send">
+            <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+          </div>
+        </div>
+        <!-- Reply Box End -->
+      </div>
+  
+    </div>
+  
+    <div class="col-md-3">
+  
+    </div>
+  </div>

@@ -1,0 +1,181 @@
+<div class="container app">
+    <div class="row app-one">
+      <div class="col-sm-4 side">
+        <div class="side-one">
+          <div class="row heading">
+            <div class="col-sm-3 col-xs-3 heading-avatar">
+              <div class="heading-avatar-icon">
+                <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+              </div>
+            </div>
+           <!--  <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+              <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+            </div>
+            <div class="col-sm-2 col-xs-2 heading-compose  pull-right">
+              <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i>
+            </div> -->
+          </div>
+          <div class="row searchBox">
+            <div class="col-sm-12 searchBox-inner">
+              <div class="form-group has-feedback">
+                <input id="searchText" type="text" [(ngModel)]="term"  class="form-control" name="searchText" placeholder="Search">
+                <span class="glyphicon glyphicon-search form-control-feedback"></span>
+              </div>
+            </div>
+          </div>
+          <div class="row sideBar">
+            <h2 *ngIf="FriendList && FriendList.length == 0" class="text-center">{{'messagesNoFriends'|translate}}</h2>
+            <h3 *ngIf="!FriendList" class="text-center">{{'messagesFetchingData'|translate}}</h3>
+            <div *ngFor="let i of FriendList | search : term">
+              <div class="row sideBar-body" [class.selected]="i.Selected" [class.alert]="i.Alert" (click)="GetChat(i.Id)">
+                <div class="col-sm-12 col-xs-12 sideBar-main">
+                  <div class="row">
+                    <div class="col-sm-8 col-xs-8 sideBar-name">
+                      <span class="name-meta">{{i.NickName | friendName}}
+                      </span>
+                      <sub class="statusOffline" *ngIf="!i.State">{{'offline'|translate}}</sub>
+                      <sub class="statusOnline" *ngIf="i.State">{{'online'|translate}}</sub>
+                    </div>
+                    <div class="col-sm-4 col-xs-4 pull-right sideBar-time">
+                      <span class="time-meta pull-right">{{i.LastSeen | amFromUtc |amLocal |amTimeAgo }}
+                      </span>
+                      <br>
+                      <button data-toggle="tooltip" data-placement="top" title="Tooltip on top"  
+                      style="padding:3px 6px;margin:0 4px" class="btn btn-primary pull-right"
+                      data-toggle="modal" data-target="#myModal"
+                      >
+                      <i class="fa fa-edit"></i></button> 
+                      <button data-toggle="tooltip" data-placement="top" title="Tooltip on top" 
+                      (click)="DeleteFriend(i.Id);$event.stopPropagation()" style="padding:3px 6px;margin:0 4px"
+                       class="btn btn-danger pull-right">
+                       <i class="fa fa-trash"></i></button>
+                    </div>
+                  </div>
+                </div>
+              
+              </div>
+            
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-8 conversation">
+        <div class="row heading">
+          <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+            <!--   <div class="heading-avatar-icon">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                  </div> -->
+          </div>
+          <div class="col-sm-8 col-xs-7 heading-name">
+            <a class="heading-name-meta">{{CurrentFriendName| friendName}}
+            </a>
+            <span class="heading-online">Online</span>
+          </div>
+          <!-- <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+            <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+          </div> -->
+        </div>
+        <div class="row message" id="conversation">
+          <div *ngIf="Messages && Messages.length != 0">
+            <div *ngFor="let msg of Messages">
+  
+              <div class="row message-body" *ngIf="msg.Sender == SenderType.Friend">
+                <div class="col-sm-12 message-main-receiver">
+                  <div class="receiver">
+                    <div class="message-text">
+                      <div *ngIf="msg.Type == MessageType.TextMessage">
+                        {{msg.MessageData}}
+                      </div>
+                      <div *ngIf="msg.Type == MessageType.ImageMessage">
+                        <img class="chatimg" src="{{msg.MessageData | attachHostName}}"/>
+                      </div>
+                    </div>
+                    <span class="message-time pull-right">
+                      {{msg.Date |amLocal |amDateFormat: 'YYYY-MM-DD HH:mm'}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="row message-body" *ngIf="msg.Sender == SenderType.Me">
+                <div class="col-sm-12 message-main-sender">
+                  <div class="sender">
+                    <div class="message-text">
+                      <div *ngIf="msg.Type == MessageType.TextMessage">
+                        {{msg.MessageData}}
+                      </div>
+                      <div  *ngIf="msg.Type == MessageType.ImageMessage">
+                        
+                        <img class="chatimg" src="{{msg.MessageData | attachHostName}}"/>
+                      </div>
+                    </div>
+                    <span class="message-time pull-right">
+                      {{msg.Date | amFromUtc |amLocal | amDateFormat: 'YYYY-MM-DD HH:mm'}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+  
+  
+            </div>
+          </div>
+          <div class="row message-body" *ngIf="TypingIndicator">
+            <div class="col-sm-12 message-main-receiver">
+              <div class="receiver">
+                <div class="message-text">
+                  <img src="../../../../assets/imgs/typing.gif" width="100%" height="30">
+                </div>
+                <!--  <span class="message-time pull-right">
+                                {{msg.Date |amFromUtc |amLocal |amDateFormat: 'mm:ss'}}
+                            </span> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row reply">
+          <div class="col-sm-1 col-xs-1 reply-emojis">
+            <i class="fa fa-smile-o fa-2x"></i>
+          </div>
+          <div class="col-sm-9 col-xs-9 reply-main">
+            <input [(ngModel)]="NewMessageInput" (keyup.enter)="SendMessage()" (blur)="Typing(false)" (focus)="Typing(true)" type="text"
+              class="form-control">
+          </div>
+          <div class="col-sm-1 col-xs-1 reply-recording">
+            <div class="upload-btn-wrapper text-center">
+              <i class="fa fa-camera fa-2x" aria-hidden="true"></i>
+              <input type="file" (change)="SendImageMessage($event)" multiple="false" accept="image/*" id="myfile" name="myfile" />
+            </div>
+          </div>
+          <div (click)="SendMessage()" class="col-sm-1 col-xs-1 reply-send">
+            <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">{{'messagesModelTitle'|translate}}</h4>
+        </div>
+       <form [formGroup]='updatenicknameform' (ngSubmit)='ChangeNickName()'>
+        <div class="modal-body">
+          <input type="text" class="form-control" formControlName = 'NickName'>
+          <span class="help-block validation-alert"
+          *ngIf="!updatenicknameform.get('NickName').valid && updatenicknameform.get('NickName').touched">{{ 'loginValidateRequiredUserName' | translate }}</span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">{{'messagesModelClose'|translate}}</button>
+          <button type="submit" class="btn btn-primary" [disabled] = "!updatenicknameform.valid || Submitted">{{'messagesModelBtn'|translate}}</button>
+        </div>
+       </form>
+      </div>
+    </div>
+  </div>

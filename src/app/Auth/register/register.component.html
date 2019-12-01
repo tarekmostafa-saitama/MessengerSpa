@@ -1,0 +1,52 @@
+<section class="login-block">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 login-sec">
+          <h2 class="text-center">{{'registerNow' | translate}}</h2>
+          <form class="login-form" (ngSubmit)="Register(form)" #form = 'ngForm'>
+            <div class="form-group">
+              <label for="FullName" class="text-uppercase">{{'registerFullName' | translate}}</label>
+              <input type="text" name="FullName" class="form-control" placeholder=""
+               ngModel required #fullname="ngModel"> 
+               <span class="help-block validation-alert" *ngIf='!fullname.valid && fullname.touched'>{{'registerValidateRequiredFullName' | translate}}</span>
+            </div>
+            <div class="form-group">
+                <label for="UserName" class="text-uppercase">{{'registerUserName' | translate}}</label>
+                <input type="text" name="UserName" class="form-control" placeholder=""
+                 ngModel required #username="ngModel"> 
+                 <span class="help-block validation-alert" *ngIf='!username.valid && username.touched'>{{'registerValidateRequiredUserName' | translate}}</span>
+              </div>
+            <div class="form-group">
+                <label for="Email" class="text-uppercase">{{'registerEmail' | translate}}</label>
+                <input type="text" name="Email" class="form-control" placeholder=""
+                 ngModel required email #email='ngModel'>
+                 <span class="help-block validation-alert" *ngIf='!email.valid && email.touched'>{{'registerValidateRequiredEmail' | translate}}</span>
+            </div>
+            <div class="form-group">
+              <label for="Password" class="text-uppercase">{{'registerPassword'|translate}}</label>
+              <input type="password" name="Password" class="form-control" placeholder=""
+               ngModel required #password="ngModel">
+               <span class="help-block validation-alert" *ngIf='!password.valid && password.touched'>{{'registerValidateRequiredPassword'|translate}}</span>
+               <span class="help-block validation-alert" *ngIf='password.valid && password.touched && (password.value.length < 8)'>{{'registerValidateWeakPassword'|translate}}</span>
+            </div>
+            <div class="form-group">
+                <label for="ConfirmPassword" class="text-uppercase">{{'registerConfirmPassword'|translate}}</label>
+                <input type="password" name="ConfirmPassword" class="form-control" placeholder=""
+                 ngModel required #confirm="ngModel">
+                 <span class="help-block validation-alert" *ngIf='password.value != confirm.value && confirm.touched'>{{'registerValidateMatchPassword'|translate}}</span>
+              </div>
+  
+  
+            <div class="form-check">
+              <button [disabled]='!form.valid' type="submit" class="btn btn-login float-right">{{'registerBtn'|translate}}</button>
+            </div>
+  
+          </form>
+  
+        </div>
+        <div class="col-md-8 banner-sec">
+         
+        </div>
+      </div>
+    </div>
+  </section>

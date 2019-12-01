@@ -1,0 +1,141 @@
+{
+    "online" :"Online",
+    "offline":"Offline",
+    "loading":"Loading...",
+
+
+
+    "navbarLogin" : "Login",
+    "navbarRegister" : "Register",
+    "navbarBrand" : "Ahoy Messanger",
+    "navbarLanguage" :"Language",
+    "navbarSearch" : "Search",
+    "navbarVideo" :"Strangers Video Chat",
+    "navbarText" :"Strangers Text Chat",
+    "navbarMessages" :"Messages",
+    "navbarAccount" :"Account",
+    "navbarChangePassword" : "Change Password",
+    "navbarAccountSetting" : "Setting",
+    "navbarDashboard" :"Dashboard",
+    "navbarLogout" :"Logout",
+    "navbarUsers" :"User Mangement",
+    "navbarLiveMonitoring" :"Live Monitoring",
+    "navbarErrorMangement" :"Error Mangement",
+
+
+
+    "loginNow" :"Login Now",
+    "loginUserName" :"User Name",
+    "loginPassword" : "Password",
+    "loginBtn" : "Login",
+    "loginValidateRequiredUserName" : "Please enter valid user name !",
+    "loginValidateRequiredPassword" : "Please enter valid password !",
+    "loginNotCorrect" : "User name or Password not correct",
+    "loginCorrect" : "You have loggedin successfully",
+
+
+    "registerNow" :"Register Now",
+    "registerFullName" :"Full Name",
+    "registerUserName" :"User Name",
+    "registerEmail" :"Email",
+    "registerPassword" : "Password",
+    "registerConfirmPassword" : "Confirm Password",
+    "registerBtn" : "Register",
+    "registerValidateRequiredFullName" : "Please enter valid full name !",
+    "registerValidateRequiredUserName" : "Please enter valid user name !",
+    "registerValidateRequiredEmail" : "Please enter valid email !",
+    "registerValidateRequiredPassword" : "Please enter valid password !",
+    "registerValidateWeakPassword" : "Please enter strong password !",
+    "registerValidateMatchPassword" : "Password and confirm password didn't match !",
+    "registerSuccess" : "You have registered new account successfully",
+   
+
+
+
+    "friendEnterKey" : "Enter Your Key (Min 8 chars)",
+    "friendConnect" : " Connect Now",
+    "friendNoMessages" :"No Messages Yet.",
+
+
+
+
+    "strangersConnectBtn" :"Connect to another Stranger",
+
+
+
+    "videoConnecting" : "Connecting to the server ...",
+    "videoConnected" : "Connecting to the server ...",
+    "videoFailedConnect" : "Can't Connect to the server, please refresh the page.",
+    "videoCallingStranger" : "Calling Stranger now, just wait.",
+    "videoWaitingStranger" : "Waiting for another stranger to connect ...",
+
+    "messagesNoFriends" :"No Friends.",
+    "messagesFetchingData" :"Fetching Data, Please Wait ...",
+    "messagesNickNameUpdated" :"Nick Name Updated Successfully",
+    "messagesNickNameNotUpdated" :"Error while updating Nick Name",
+    "messagesDeleteFriend" :"Friend deleted successully",
+    "messagesModelBtn":"Change Nick Name",
+    "messagesModelClose":"Close",
+    "messagesModelTitle":"Change Nick Name :",
+
+
+
+
+    "settingChangePP":"Change Profile Picture",
+    "settingAppearInSearch":"Appear In Search Result :",
+    "settingStatus":"Status : ",
+    "settingUpdateBtn":"Update Setting",
+
+
+
+
+    "searchTypeName" :"Type Member Name to Search.",
+    "searchNoResult" :"No Result.",
+    "searchBtn" : "Search Members",
+
+
+
+
+    "changepasswordChangePassword":"Change Password",
+    "changepasswordOldPassword":"Old Password",
+    "changepasswordNewPassword":"New Password",
+    "changepasswordConfirmNewPassword":"Confirm New Password",
+    "changepasswordChangePasswordBtn":"Change Password",
+    "changepasswordSuccess":"Password has been changed Successfully",
+    "changepasswordFail":"Password is incorrect",
+
+
+
+    "dashboardMemberMessages":"Member Message",
+    "dashboardStrangerMessages":"Stranger Message",
+    "dashboardMemberCount":"Members Count",
+    "dashboardErrorsCount":"Errors Count",
+    "dashboardViewDetails":"View Details",
+
+
+
+
+    "waitingForStranger" : "Waiting for stranger to connect with, please wait ...",
+    "connectedtoStranger" : "You now connected with stranger, say hi !!!",
+    "reconnectStranger" : "Stranger is trying to reconnect ...",
+    "disconnectStranger" : "Stranger has been Disconnected",
+
+
+    "strangerFriend" : "Stranger Friend",
+
+
+
+ 
+    "nk" : "an error has occured, please contact us to report.",
+    "nf" : "there is no such user to contact with.",
+    "cf" : "there is a connection problem with the messages server, please try reloding the app to fix the problem.",
+
+
+
+    "loginpage" : "Ahoy | Login",
+    "registerpage" : "Ahoy | Register",
+    "homepage" : "Ahoy | Home",
+    "messagespage" : "Ahoy | Messages",
+    "textstrangerspage" : "Ahoy | Text with Strangers"
+
+}

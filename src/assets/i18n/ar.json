@@ -1,0 +1,133 @@
+{
+    "online" :"متصل",
+    "offline":"غير متصل",
+    "loading":"التحميل...",
+
+
+
+    "navbarLogin" : "تسجيل دخول",
+    "navbarRegister" : "حساب جديد",
+    "navbarBrand" : "أهووى ماسنجر",
+    "navbarLanguage" :"اللغة",
+    "navbarSearch" : "البحث عن اعضاء",
+    "navbarVideo" :"مراسلة فيديو مجهولين",
+    "navbarText" :"مراسلة شات مجهولين",
+    "navbarMessages" :"الرسائل",
+    "navbarAccount" :"الحساب",
+    "navbarChangePassword" : "تغيير الرقم السرى",
+    "navbarAccountSetting" : "الاعدادات",
+    "navbarLogout" :"تسجيل الخروج",
+    "navbarDashboard" :"لوحة التحكم",
+    "navbarUsers" :"ادارة الاعضاء",
+    "navbarLiveMonitoring" :"الاحداث مباشر",
+    "navbarErrorMangement" :"ادارة الاخطاء",
+
+
+    "loginNow" :"تسجيل دخول الان",
+    "loginUserName" :"اسم المستخدم",
+    "loginPassword" : "الرقم السرى",
+    "loginBtn" : "تسجيل دخول",
+    "loginValidateRequiredUserName" : "من فضلك ادخل اسم المستخدم بطريقة صحيحة !",
+    "loginValidateRequiredPassword" : "من فضلك ادخل الرقم السرى بطريقة صحيحة !",
+    "loginNotCorrect" : "اسم المستخدم او الرقم السرى غير صحيح",
+    "loginCorrect" : "تم تسجيل دخولك بنجاح",
+
+
+
+    "registerNow" :"انشاء حساب الان",
+    "registerFullName" :"الاسم بالكامل",
+    "registerUserName" :"اسم المستخدم",
+    "registerEmail" :"البريد الالكترونى",
+    "registerPassword" : "الرقم السرى",
+    "registerConfirmPassword" : "تأكيد الرقم السرى",
+    "registerBtn" : "انشاء حساب",
+    "registerValidateRequiredFullName" : "من فضلك ادخل الاسم بالكامل بطريقة صحيحة !",
+    "registerValidateRequiredUserName" : "من فضلك ادخل اسم المستخدم بطريقة صحيحة !",
+    "registerValidateRequiredEmail" : "من فضلك ادخل البريد الالكترونى بطريقة صحيحة !",
+    "registerValidateRequiredPassword" : "من فضلك ادخل الرقم السرى بطريقة صحيحة !",
+    "registerValidateWeakPassword" : "الرقم السرى ضعيف !",
+    "registerValidateMatchPassword" : "الرقم السرى غير متطابق !",
+    "registerSuccess" : "تم انشاء حساب جديد بنجاح",
+
+
+    "friendEnterKey" : "ادخل المفتاح الخاص بك (بحد ادنى 8 حروف)",
+    "friendConnect" : " تواصل الان",
+    "friendNoMessages" :"لا يوجد رسائل حتى الان.",
+
+
+    "strangersConnectBtn" :"تواصل مع شخص مجهول اخر",
+
+    "videoConnecting" : "Connecting to the server ...",
+    "videoFailedConnect" : "Can't Connect to the server, please refresh the page.",
+
+    "messagesNoFriends" :"لا اصدقاء.",
+    "messagesFetchingData" :"يتم جلب البيانات, من فضلك انتظر ...",
+    "messagesNickNameUpdated" :"تم بنجاح تعديل الاسم المستعار.",
+    "messagesNickNameNotUpdated" :"خطأ اثناء تعديل الاسم المستعار.",
+    "messagesModelBtn":"تعديل الاسم المستعار",
+    "messagesDeleteFriend" :"تم حذف الصديق بنجاح",
+    "messagesModelClose":"غلق",
+    "messagesModelTitle":"تعديل الاسم المستعار :",
+
+
+
+
+
+    "settingChangePP":"تغيير الصورة الشخصية",
+    "settingAppearInSearch":"الظهور فى نتائج البحث :",
+    "settingStatus":"الحالة الخاصة بك :",
+    "settingUpdateBtn":"تحديث الاعدادات",
+
+
+
+    "searchTypeName" :"اكتب اسم مستخدم للبحث عنه.",
+    "searchNoResult" :"لا يوجد نتائج",
+    "searchBtn" : "بحث الاعضاء",
+
+
+
+    "changepasswordChangePassword":"تغيير الرقم السرى",
+    "changepasswordOldPassword":"الرقم السرى القديم",
+    "changepasswordNewPassword":"الرقم السرى الجديد",
+    "changepasswordConfirmNewPassword":"تأكيد الرقم السرى الجديد",
+    "changepasswordChangePasswordBtn":"تحديث الرقم السرى",
+    "changepasswordSuccess":"تم تحديث الرقم السرى بنجاح",
+    "changepasswordFail":"الرقم السرى غير صحيح",
+
+
+    "dashboardMemberMessages":"رسائل الاعضاء",
+    "dashboardStrangerMessages":"رسائل المجهولين",
+    "dashboardMemberCount":"عدد الاعضاء",
+    "dashboardErrorsCount":"عدد الاخطاء",
+    "dashboardViewDetails":"عرض التفاصيل",
+    
+
+
+    
+    "waitingForStranger" : "فى انتظار شخص مجهول متاح لتتواصل معه,  من فضلك انتظر ...",
+    "connectedtoStranger" : "انت الان متصل مع شخص مجهول,  قل مرحبا !!!",
+    "reconnectStranger" : "الشخص المجهول يحاول اعادة الاتصال ...",
+    "disconnectStranger" : "تم قطع الاتصال مع الشخص المجهول",
+
+
+
+
+    "strangerFriend" : "صديق مجهول",
+
+
+
+
+ 
+    "nk" : "تم حدوث خطأ,  من فضلك تواصل معنا للابلاغ.",
+    "nf" : "لا يوجد حساب مرتبط بهذا الرابط.",
+
+
+
+
+    "loginpage" : "أهووى |تسجيل دخول",
+    "registerpage" : "أهووى | حساب جديد",
+    "homepage" : "أهووى | الصفحة الرئيسية",
+    "messagespage" : "أهووى | الرسائل",
+    "textstrangerspage" : "أهووى | شات مع اشخاص مجهولين"
+    
+}
